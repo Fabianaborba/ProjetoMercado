@@ -41,9 +41,37 @@ test("Subtrair 15 - 7", () => {
     // 3 - Valida > Assert
     expect(resultadoAtual).toBe(resultadoEsperado);
 
+})
+
+test("Multiplicar 3 * 7", () => {
+
+    // 1 - Configura > Arrange
+    // 1.1 Dados de Entrada
+    const num1 = 3;
+    const num2 = 7;
+    const resultadoEsperado = 21;
 
 
+    // 2 - Executa > Act
+    const multiplicarDoisNumeros = calculadora.multiplicarDoisNumeros;
+    const resultadoAtual = multiplicarDoisNumeros(num1, num2);
+
+    // 3 - Valida > Assert
+    expect(resultadoAtual).toBe(resultadoEsperado);
+})
 
 
+test("Dividir 27 / 9", () => {
+    // 1 - Configura > Arrange
+    // 1.1 Dados de Entrada
+    const num1 = 27;
+    const num2 = 9;
+    const resultadoEsperado = 3;
 
+    // 2 - Executa > Act
+    const dividirDoisNumeros = calculadora.dividirDoisNumeros;
+    const resultadoAtual = dividirDoisNumeros(num1, num2);
+
+    // 3 - Valida > Assert
+    expect(resultadoAtual).toBe(resultadoEsperado);
 })
