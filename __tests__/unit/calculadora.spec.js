@@ -3,6 +3,9 @@
 
 const calculadora = require("../../src/calculadora");
 
+//Apontamento para o arquivo de massa de teste
+const arquivoJs = require("../../vendors/CSV/massaDivisao");
+
 //Funções de teste de unidade
 test("Somar 5 + 7", function () {
     // 1 - Configura
@@ -75,3 +78,52 @@ test("Dividir 27 / 9", () => {
     // 3 - Valida > Assert
     expect(resultadoAtual).toBe(resultadoEsperado);
 })
+
+//HP ALM Data Driven Test
+let massaDivisao = [        // Matriz, Array, Lista de valores
+    [10, 5, 2],             // Tupla > sequência ordenada de n elementos
+    [15, 3, 5],
+    [8, 4, 2],
+    [7, 0, Infinity]
+
+]
+
+
+test.each(massaDivisao)("Dividir %f / %f", (num1, num2, resultadoEsperado) => {
+    //Configura
+    //Dados de entrada e resultado esperado são providos pela lista massaDivisao
+    //const num1 = 50;
+    // const num2 = 5;
+    //const resultadoEsperado = 10;
+
+    // 2 - Executa > Act
+    const dividirDoisNumeros = calculadora.dividirDoisNumeros;
+    const resultadoAtual = dividirDoisNumeros(num1, num2);
+
+    // 3 - Valida > Assert
+    expect(resultadoAtual).toBe(resultadoEsperado);
+})
+
+//Copia da divisao simples
+test.each(arquivoJs.array.map(elemento => [
+    elemento.num1,
+    elemento.num2,
+    elemento.resultadoEsperado
+]))
+
+    ("DDT: Dividir 27 / 9", (num1, num2, resultadoEsperado) => {
+        // 1 - Configura > Arrange
+        // 1.1 Dados de Entrada
+
+
+        // 2 - Executa > Act
+        const dividirDoisNumeros = calculadora.dividirDoisNumeros;
+        const resultadoAtual = dividirDoisNumeros(num1, num2);
+
+        // 3 - Valida > Assert
+        expect(resultadoAtual).toBe(resultadoEsperado);
+
+    })
+
+
+
