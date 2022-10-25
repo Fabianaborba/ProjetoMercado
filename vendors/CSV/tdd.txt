@@ -10,3 +10,16 @@ Dia Passou Falhou
 2     3       7
 3     5       5
 4     10      0
+
+Teste de API / WEB service / Teste de Serviço
+
+O que é um Serviço?
+É um recurso de comunicação entre sistemas e aplicativos
+
+As 4 operações básicas de um serviço:
+
+API BD / MER > Modelo Entidade Relacionamento
+> Post = (c) Create = Incluir
+> Get = (R) Reach = Consultar
+> Put = (u) Update = Alterar
+> Delete = (D) Delete = Excluir
