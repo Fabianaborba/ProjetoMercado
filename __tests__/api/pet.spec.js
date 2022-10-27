@@ -27,4 +27,17 @@ describe("PetStore Swagger - Pet", () => {
                 assert.equal(response.body.status, "available");   // Se está com status esperado
             });
     });
+
+    // Consulta o animal pelo seu pet ID
+    it("Get Pet", () => {
+        return request                     //Chamada para a requisição
+            .get("/pet/" + petId)          //Consultar o anima pelo ID
+            .then((response) => {
+                assert.equal(response.statusCode, 200);                // Tratar a resposta / retorno
+                assert.equal(response.body.petId);
+                assert.equal(response.body.name, "ScoobyDoo");
+                assert.equal(response.body.status, "available");
+
+            });
+    });
 });
