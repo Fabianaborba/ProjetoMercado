@@ -1,0 +1,25 @@
+TDD = Test Driven Development
+      Desenvolvimento Direcionado por Testes
+
+Teste de Unidade = um codigo testando um outro
+10 funções --> 10 esqueletos
+10 testes de unidade - 1 por função
+rodar todo o Direcionado
+Dia Passou Falhou
+1     0      10
+2     3       7
+3     5       5
+4     10      0
+
+Teste de API / WEB service / Teste de Serviço
+
+O que é um Serviço?
+É um recurso de comunicação entre sistemas e aplicativos
+
+As 4 operações básicas de um serviço:
+
+API BD / MER > Modelo Entidade Relacionamento
+> Post = (c) Create = Incluir
+> Get = (R) Reach = Consultar
+> Put = (u) Update = Alterar
+> Delete = (D) Delete = Excluir
