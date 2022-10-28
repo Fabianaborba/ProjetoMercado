@@ -1,0 +1,22 @@
+{
+    "id": 6704271,
+    "category": {
+        "id": 1,
+        "name": "dog"
+    },
+    "name": "ScoobyDoo",
+    "photoUrls": [
+        ""
+    ],
+    "tags": [
+        {
+            "id": 2,
+            "name": "vaccinated"
+        },
+        {
+            "id": 4,
+            "name": "castrated"
+        }
+    ],
+    "status": "solded"
+}

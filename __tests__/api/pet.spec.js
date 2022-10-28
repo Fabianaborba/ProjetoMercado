@@ -14,6 +14,7 @@ describe("PetStore Swagger - Pet", () => {
     // Post - teste de incluir um animal
     it("Post Pet", () => {
         // Configura
+        // pontar para o arquivo json pet1
         const jsonFile = require("../../vendors/json/pet1.json");
         // Realizar a requisição a receber a resposta
         return request       // Chamada apra a requisição
@@ -40,4 +41,27 @@ describe("PetStore Swagger - Pet", () => {
 
             });
     });
+
+    //Alterar dados do animal
+    it("Put Pet", () => {
+        // pontar para o arquivo json pet2
+        const jsonFile = require("../../vendors/json/pet2.json");
+
+        return request                     // Realizar a requisição
+            .put("/pet")                 // Alteração do animal - aponta para o endpoint
+            .send(jsonFile)              // json com a alteração
+            .then((response) => {       // Receber e validar a resposta
+                assert.equal(response.statusCode, 200);
+                assert.equal(response.body.id, petId);
+                assert.equal(response.body.name, "ScoobyDoo");
+                assert.equal(response.body.tags[1].id, 4);
+                assert.equal(response.body.tags[1].name, "castrated");
+                assert.equal(response.body.status, "solded");
+            });
+    });
+
 });
+
+// [] colchetes = lista de coisas
+// {} abre e fecha código
+// () parenteses envia e recebe dados
