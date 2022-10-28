@@ -60,6 +60,13 @@ describe("PetStore Swagger - Pet", () => {
             });
     });
 
+    it("Delete Pet", () => {
+        return request
+            .delete("/pet/" + petId)
+            .then((response) => {
+                assert.equal(response.statusCode, 200)
+            });
+    });
 });
 
 // [] colchetes = lista de coisas
