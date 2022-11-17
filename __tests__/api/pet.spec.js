@@ -10,6 +10,7 @@ const petId = 6704271;                              // código do animal
 // Descrição = conjunto de testes ~ Classe
 describe("PetStore Swagger - Pet", () => {
     const request = supertest(baseUrl);
+    const pets = require("../../vendors/json/petn");
 
     // Post - teste de incluir um animal
     it("Post Pet", () => {
@@ -67,6 +68,25 @@ describe("PetStore Swagger - Pet", () => {
                 assert.equal(response.statusCode, 200)
             });
     });
+    pets.array.forEach(({ nomePet, idPet, nomeCategoria, idCategoria }) => {
+
+        it("Setup Swagger - Add Pets", () => {
+            pet.id = idPet
+            pet.name = nomePet
+            pet.category.id = idCategoria
+            pet.category.name = nameCategoria
+            pet.tags[0].id = 3
+            pet.tags[0].name = "vaccinated"
+            pet.status = "done"
+
+            return request
+                .post("/pet")
+                .send(pet)
+
+        }); //fecha o it
+
+    });
+
 });
 
 // [] colchetes = lista de coisas
