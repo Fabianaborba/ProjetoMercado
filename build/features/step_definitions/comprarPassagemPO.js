@@ -11,7 +11,7 @@ const HomePage = require("../../pages/HomePage");
         .build();
     this.driver.manage().setTimeouts({ implicit: 60000 });
     this.driver.manage().window().maximize();
-    this.HomePage = new HomePage(this.driver); //ligando mapeamento
+    this.homePage = new HomePage(this.driver); //ligando mapeamento
 });
 (0, cucumber_1.After)(async function () {
     await this.driver.quit();

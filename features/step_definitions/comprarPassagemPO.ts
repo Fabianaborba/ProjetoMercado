@@ -11,7 +11,7 @@ Before(async function () {
     this.driver.manage().setTimeouts({ implicit: 60000 })
     this.driver.manage().window().maximize()
 
-    this.HomePage = new HomePage(this.driver)   //ligando mapeamento
+    this.homePage = new HomePage(this.driver)   //ligando mapeamento
 })
 
 After(async function () {
