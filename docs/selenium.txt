@@ -29,4 +29,14 @@ Testes Web
 
         É uma extensão para navegadores como Firefox, Chrome e Edge
 
+
+BDD: Forma de organização para melhorar a comunicação do time
+    - Foco na visão de comportamento do PoC- colaborativo - todos dão opinião
+    - pode escrever sos critérios de aceitação em Gherkin (Dado-Quando-Então)
+    - pode ser usado como base para conectar a automação (Cucumber)
+
+Page Objects: Forma de organização da automação de teste pensando em projetos
+              com interface ricas e com separação de papeis
+              
+
         

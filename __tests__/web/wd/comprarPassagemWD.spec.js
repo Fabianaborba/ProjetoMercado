@@ -41,11 +41,11 @@ describe('Comprar Passagem WD', () => {
         //últimos que incluí:
 
         await driver.findElement(By.css('input.btn.btn-primary')).click()
-        //validar titulo da guia e a frase de titulo da seleção dos vôos
 
+        // validar o titulo da guia e a frase de titulo da seleção dos vôos
+        console.log("Get Title = " + await driver.getTitle()) //escreve no terminal o que está no getTitle
         assert(await driver.getTitle() == 'BlazeDemo - reserve')
-        await console.log("Get Title" + await driver.getTitle())  //escreve no terminal o que está no 
-        //assert(await driver.findElement(By.css('h3')).getText() == 'Flights from São Paolo to New York:')
+
         assert(await driver.findElement(By.xpath('//h3')).getText() == 'Flights from São Paolo to Cairo:')
     })
 }) 
